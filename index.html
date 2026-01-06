@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#f6fbf7; --card:#ffffff; --ink:#172018; --muted:rgba(23,32,24,.70);
@@ -23,59 +24,263 @@
         linear-gradient(180deg, var(--bg), #fff);
       font-family: "Quicksand", "Noto Serif SC", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
+
     .wrap{ width:min(980px,100%); }
-    .card{background: var(--card); border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow:hidden; position:relative;}
-    .ribbon{
-      position:absolute; left:-60px; top:22px; transform: rotate(-10deg);
-      background: linear-gradient(90deg, rgba(45,106,79,.95), rgba(183,228,199,.95));
-      color:#fff; padding:10px 90px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:12px;
-      border-radius:999px; box-shadow: 0 14px 30px rgba(45,106,79,.22);
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
     }
-    .inner{padding:34px 26px 24px; display:grid; grid-template-columns: 1.1fr .9fr; gap:20px;}
+
+    /* Desktop ribbon (becomes bar on mobile via media query) */
+    .ribbon{
+      position:absolute;
+      left:-60px;
+      top:22px;
+      transform: rotate(-10deg);
+      background: linear-gradient(90deg, rgba(45,106,79,.95), rgba(183,228,199,.95));
+      color:#fff;
+      padding:10px 90px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      border-radius:999px;
+      box-shadow: 0 14px 30px rgba(45,106,79,.22);
+      z-index:2;
+    }
+
+    .inner{
+      padding:34px 26px 24px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:20px;
+    }
     @media (max-width:860px){ .inner{grid-template-columns:1fr} }
+
     .left{
-      border-radius:22px; border:1px solid rgba(45,106,79,.16); padding:22px;
+      border-radius:22px;
+      border:1px solid rgba(45,106,79,.16);
+      padding:22px;
       background:
         radial-gradient(700px 320px at 20% 0%, rgba(183,228,199,.35), transparent 60%),
         radial-gradient(700px 320px at 80% 0%, rgba(255,214,165,.30), transparent 60%),
         #fff;
     }
-    .headline{font-family: "Noto Serif SC", serif; font-weight:700; font-size:30px; margin:0 0 8px; color:var(--green); letter-spacing:.06em;}
-    .sub{margin:0 0 18px; color:var(--muted); line-height:1.65; font-size:14px;}
-    .names{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; margin:10px 0 14px;}
-    .names .cn{font-family:"Noto Serif SC", serif; font-size:22px; font-weight:700; letter-spacing:.05em;}
-    .names .en{font-size:14px; font-weight:800; color:rgba(23,32,24,.70); letter-spacing:.08em; text-transform:uppercase;}
-    .divider{height:1px; background: linear-gradient(90deg, transparent, rgba(45,106,79,.30), rgba(183,228,199,.55), rgba(45,106,79,.30), transparent); margin:14px 0 18px;}
-    .info{display:grid; gap:10px; font-size:14px; line-height:1.6;}
+    .headline{
+      font-family: "Noto Serif SC", serif;
+      font-weight:700;
+      font-size:30px;
+      margin:0 0 8px;
+      color:var(--green);
+      letter-spacing:.06em;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+    .names{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:baseline;
+      margin:10px 0 14px;
+    }
+    .names .cn{
+      font-family:"Noto Serif SC", serif;
+      font-size:22px;
+      font-weight:700;
+      letter-spacing:.05em;
+    }
+    .names .en{
+      font-size:14px;
+      font-weight:800;
+      color:rgba(23,32,24,.70);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .divider{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(45,106,79,.30), rgba(183,228,199,.55), rgba(45,106,79,.30), transparent);
+      margin:14px 0 18px;
+    }
+    .info{
+      display:grid;
+      gap:10px;
+      font-size:14px;
+      line-height:1.6;
+    }
     .kv{
-      display:grid; grid-template-columns: 110px 1fr; gap:10px; padding:10px 12px; border-radius:16px;
-      border:1px solid rgba(45,106,79,.14); background: rgba(183,228,199,.12);
+      display:grid;
+      grid-template-columns: 110px 1fr;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid rgba(45,106,79,.14);
+      background: rgba(183,228,199,.12);
     }
-    .k{font-weight:900; letter-spacing:.08em; text-transform:uppercase; color: rgba(45,106,79,.85); font-size:12px;}
-    .right{border-radius:22px; border:1px solid rgba(45,106,79,.16); padding:18px; background: rgba(183,228,199,.10);}
-    .right h3{margin:4px 0 10px; font-size:14px; letter-spacing:.12em; text-transform:uppercase; color: rgba(45,106,79,.95);}
-    .btns{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:10px 0 12px;}
+    .k{
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: rgba(45,106,79,.85);
+      font-size:12px;
+    }
+
+    .right{
+      border-radius:22px;
+      border:1px solid rgba(45,106,79,.16);
+      padding:18px;
+      background: rgba(183,228,199,.10);
+    }
+    .right h3{
+      margin:4px 0 10px;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(45,106,79,.95);
+    }
+
+    /* Buttons */
+    .btns{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin:10px 0 12px;
+    }
     @media (max-width:520px){ .btns{grid-template-columns:1fr} }
+
     a.btn{
-      text-decoration:none; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 12px;
-      border-radius:16px; font-weight:900; letter-spacing:.02em; border:1px solid rgba(45,106,79,.22);
-      background:#fff; color: var(--green); box-shadow: 0 12px 26px rgba(45,106,79,.10);
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 12px;
+      border-radius:16px;
+      font-weight:900;
+      letter-spacing:.02em;
+      border:1px solid rgba(45,106,79,.22);
+      background:#fff;
+      color: var(--green);
+      box-shadow: 0 12px 26px rgba(45,106,79,.10);
+      cursor:pointer;
+      user-select:none;
     }
-    a.btn.primary{background: linear-gradient(90deg, rgba(45,106,79,.95), rgba(183,228,199,.95)); color:#fff; border-color: rgba(255,255,255,.22);}
-    .qr{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    a.btn.primary{
+      background: linear-gradient(90deg, rgba(45,106,79,.95), rgba(183,228,199,.95));
+      color:#fff;
+      border-color: rgba(255,255,255,.22);
+    }
+
+    /* QR */
+    .qr{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
     @media (max-width:420px){ .qr{grid-template-columns:1fr} }
-    .qrbox{border-radius:18px; border:1px dashed rgba(45,106,79,.28); padding:12px; text-align:center; background: rgba(255,255,255,.60);}
-    .cap{margin-top:8px; font-size:12px; color:rgba(23,32,24,.72); font-weight:800; letter-spacing:.08em;}
-    .bottom{padding:14px 26px 22px; border-top:1px solid rgba(45,106,79,.12); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-size:12px; color: rgba(23,32,24,.62);}
+    .qrbox{
+      border-radius:18px;
+      border:1px dashed rgba(45,106,79,.28);
+      padding:12px;
+      text-align:center;
+      background: rgba(255,255,255,.60);
+    }
+    .cap{
+      margin-top:8px;
+      font-size:12px;
+      color:rgba(23,32,24,.72);
+      font-weight:800;
+      letter-spacing:.08em;
+    }
+
+    .bottom{
+      padding:14px 26px 22px;
+      border-top:1px solid rgba(45,106,79,.12);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:12px;
+      color: rgba(23,32,24,.62);
+    }
+
+    /* Print */
     @media print{
       body{background:#fff; padding:0}
       .card{box-shadow:none; border:1px solid #ddd}
       .right{background:#fff}
       .btns{display:none !important}
-      .ribbon{background:#fff; color:#000; box-shadow:none; border:1px solid #ddd}
+      .ribbon{background:#fff; color:#000; box-shadow:none; border:1px solid #ddd; transform:none; left:0; top:0; padding:8px 16px;}
     }
+
+    /* =========================
+       Mobile Optimization (built-in)
+       ========================= */
+    @media (max-width: 480px){
+      body{ padding:10px; }
+
+      .ribbon{
+        position:relative;
+        left:0;
+        top:0;
+        transform:none;
+        padding:8px 16px;
+        border-radius:0 0 16px 16px;
+        font-size:11px;
+        text-align:center;
+        margin-bottom:6px;
+        box-shadow: 0 12px 22px rgba(45,106,79,.18);
+      }
+
+      .inner{
+        padding:18px 14px 16px;
+        gap:14px;
+      }
+
+      .left, .right{
+        padding:16px;
+        border-radius:18px;
+      }
+
+      .headline{
+        font-size:24px;
+        text-align:center;
+      }
+
+      .names{
+        justify-content:center;
+        text-align:center;
+      }
+
+      .names .cn{font-size:20px;}
+      .names .en{font-size:12px;}
+
+      .btns{ grid-template-columns:1fr; gap:10px; }
+      a.btn{ padding:14px; font-size:14px; }
+
+      .qr{ grid-template-columns:1fr; }
+      .qrbox{ padding:10px; }
+
+      .bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:6px;
+      }
+    }
+
+    /* Small helper (optional hide on desktop/mobile) */
+    .only-mobile{display:none}
+    @media (max-width:480px){ .only-mobile{display:block} .only-desktop{display:none} }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="card">
@@ -113,11 +318,17 @@
               </div>
             </div>
           </div>
+
+          <p class="only-desktop" style="margin:14px 2px 0; font-size:12px; color:rgba(23,32,24,.65); line-height:1.55;">
+            温馨提示：请提前回复出席人数与忌口，以便我们安排座位。<br/>
+            Kindly RSVP in advance for seat arrangement.
+          </p>
         </section>
 
         <aside class="right">
           <h3>Map & RSVP · 导航与回复</h3>
 
+          <!-- Buttons: WA first (best CTA), then Map, Calendar, Form -->
           <div class="btns">
             <a class="btn primary" id="waBtn" target="_blank" rel="noopener">💬 WhatsApp RSVP</a>
             <a class="btn" id="mapBtn" target="_blank" rel="noopener">📍 Google Map</a>
@@ -151,10 +362,20 @@
   </div>
 
   <script>
-    const MAP_URL  = "https://www.google.com/maps?q=" + encodeURIComponent("Golden Sun Restaurant, 2nd Floor, Lot 35604, Jalan Kuchai Lama, 58200 Kuala Lumpur, Malaysia");
-    const RSVP_URL = "https://forms.gle/TYN4uBLo8RoHr2zL9";
+    /***********************
+     * CONFIG (edit if needed)
+     ***********************/
+    const MAP_URL  = "https://www.google.com/maps?q=" + encodeURIComponent(
+      "Golden Sun Restaurant, 2nd Floor, Lot 35604, Jalan Kuchai Lama, 58200 Kuala Lumpur, Malaysia"
+    );
+
+    // Put your real Google Form link here (optional; keep placeholder if not ready)
+    const RSVP_URL = "https://forms.gle/PUT_YOUR_RSVP_LINK_HERE";
+
+    // WhatsApp receiver (no +, no spaces)
     const WHATSAPP_NUMBER = "601110180669";
 
+    // RSVP message (bilingual)
     const RSVP_MESSAGE =
 `Hi Johnshen & Jacquelyn 👋
 I would like to RSVP for your wedding lunch on 27 Sep 2026 (11:30am–2:00pm) at Golden Sun Restaurant.
@@ -167,8 +388,12 @@ Notes / 备注:
 
 恭喜你们！🎉`;
 
-    const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(RSVP_MESSAGE);
+    const WHATSAPP_URL =
+      "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(RSVP_MESSAGE);
 
+    /***********************
+     * ICS (.ics) generator
+     ***********************/
     const EVENT_TITLE = "Wedding Lunch - Johnshen Chuah & Jacquelyn Choo";
     const EVENT_LOCATION = "Golden Sun Restaurant, 2nd Floor, Lot 35604, Jalan Kuchai Lama, 58200 Kuala Lumpur, Malaysia";
     const EVENT_DESCRIPTION =
@@ -184,6 +409,7 @@ Map: ${MAP_URL}
 RSVP (WhatsApp): ${WHATSAPP_URL}
 RSVP (Form): ${RSVP_URL}`;
 
+    // KL (UTC+8): 11:30–14:00 => UTC 03:30–06:00
     const DTSTART_UTC = "20260927T033000Z";
     const DTEND_UTC  = "20260927T060000Z";
 
@@ -194,22 +420,35 @@ RSVP (Form): ${RSVP_URL}`;
         .replace(/;/g, "\\;")
         .replace(/\r?\n/g, "\\n");
     }
+
     function downloadICS() {
       const uid = "johnshen-jacquelyn-weddinglunch-20260927@" + location.host;
       const now = new Date();
       const pad = (n)=> String(n).padStart(2,"0");
       const dtstamp =
-        now.getUTCFullYear() + pad(now.getUTCMonth()+1) + pad(now.getUTCDate()) + "T" +
-        pad(now.getUTCHours()) + pad(now.getUTCMinutes()) + pad(now.getUTCSeconds()) + "Z";
+        now.getUTCFullYear() +
+        pad(now.getUTCMonth()+1) +
+        pad(now.getUTCDate()) + "T" +
+        pad(now.getUTCHours()) +
+        pad(now.getUTCMinutes()) +
+        pad(now.getUTCSeconds()) + "Z";
 
       const ics =
-        "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Wedding Invitation//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n" +
+        "BEGIN:VCALENDAR\r\n" +
+        "VERSION:2.0\r\n" +
+        "PRODID:-//Wedding Invitation//EN\r\n" +
+        "CALSCALE:GREGORIAN\r\n" +
+        "METHOD:PUBLISH\r\n" +
         "BEGIN:VEVENT\r\n" +
-        "UID:" + uid + "\r\nDTSTAMP:" + dtstamp + "\r\nDTSTART:" + DTSTART_UTC + "\r\nDTEND:" + DTEND_UTC + "\r\n" +
+        "UID:" + uid + "\r\n" +
+        "DTSTAMP:" + dtstamp + "\r\n" +
+        "DTSTART:" + DTSTART_UTC + "\r\n" +
+        "DTEND:" + DTEND_UTC + "\r\n" +
         "SUMMARY:" + escapeICS(EVENT_TITLE) + "\r\n" +
         "LOCATION:" + escapeICS(EVENT_LOCATION) + "\r\n" +
         "DESCRIPTION:" + escapeICS(EVENT_DESCRIPTION) + "\r\n" +
-        "END:VEVENT\r\nEND:VCALENDAR\r\n";
+        "END:VEVENT\r\n" +
+        "END:VCALENDAR\r\n";
 
       const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
       const url = URL.createObjectURL(blob);
@@ -222,16 +461,32 @@ RSVP (Form): ${RSVP_URL}`;
       URL.revokeObjectURL(url);
     }
 
-    document.getElementById("mapBtn").href = MAP_URL;
+    /***********************
+     * Auto-detect mobile/desktop
+     * (used for QR sizing + slight UX)
+     ***********************/
+    const isMobile = window.matchMedia && window.matchMedia("(max-width: 480px)").matches;
+
+    // Bind buttons
+    document.getElementById("mapBtn").href  = MAP_URL;
     document.getElementById("formBtn").href = RSVP_URL;
-    document.getElementById("waBtn").href = WHATSAPP_URL;
+    document.getElementById("waBtn").href   = WHATSAPP_URL;
     document.getElementById("icsBtn").addEventListener("click", downloadICS);
+
+    // Mobile-friendly: if RSVP_URL is still placeholder, hide form button automatically
+    if (RSVP_URL.includes("PUT_YOUR_RSVP_LINK_HERE")) {
+      document.getElementById("formBtn").style.display = "none";
+    }
   </script>
 
+  <!-- QR generator -->
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script>
-    new QRCode(document.getElementById("qrWa"),  { text: WHATSAPP_URL, width: 150, height: 150, correctLevel: QRCode.CorrectLevel.M });
-    new QRCode(document.getElementById("qrMap"), { text: MAP_URL,      width: 150, height: 150, correctLevel: QRCode.CorrectLevel.M });
+    // Auto-size QR for mobile/desktop
+    const QR_SIZE = (window.matchMedia && window.matchMedia("(max-width: 480px)").matches) ? 120 : 150;
+
+    new QRCode(document.getElementById("qrWa"),  { text: WHATSAPP_URL, width: QR_SIZE, height: QR_SIZE, correctLevel: QRCode.CorrectLevel.M });
+    new QRCode(document.getElementById("qrMap"), { text: MAP_URL,      width: QR_SIZE, height: QR_SIZE, correctLevel: QRCode.CorrectLevel.M });
   </script>
 </body>
 </html>
