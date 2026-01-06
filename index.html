@@ -1,492 +1,295 @@
 <!doctype html>
 <html lang="zh-Hans">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>结婚午宴请柬｜蔡崇申 & 朱燕虹</title>
-  <meta name="description" content="Garden style wedding lunch invitation - 2026-09-27" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>结婚午宴请柬｜蔡崇申 & 朱燕虹</title>
 
-  <style>
-    :root{
-      --bg:#f6fbf7; --card:#ffffff; --ink:#172018; --muted:rgba(23,32,24,.70);
-      --green:#2d6a4f; --mint:#b7e4c7; --peach:#ffd6a5;
-      --line:rgba(45,106,79,.18); --shadow: 0 18px 70px rgba(0,0,0,.10); --radius:26px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:18px; color:var(--ink);
-      background:
-        radial-gradient(900px 450px at 15% 5%, rgba(183,228,199,.60), transparent 60%),
-        radial-gradient(900px 450px at 85% 0%, rgba(255,214,165,.55), transparent 65%),
-        linear-gradient(180deg, var(--bg), #fff);
-      font-family: "Quicksand", "Noto Serif SC", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .wrap{ width:min(980px,100%); }
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
+<style>
+:root{
+  --bg:#fff6f4;
+  --card:#ffffff;
+  --ink:#2b1b18;
+  --muted:rgba(43,27,24,.68);
 
-    /* Desktop ribbon (becomes bar on mobile via media query) */
-    .ribbon{
-      position:absolute;
-      left:-60px;
-      top:22px;
-      transform: rotate(-10deg);
-      background: linear-gradient(90deg, rgba(45,106,79,.95), rgba(183,228,199,.95));
-      color:#fff;
-      padding:10px 90px;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-size:12px;
-      border-radius:999px;
-      box-shadow: 0 14px 30px rgba(45,106,79,.22);
-      z-index:2;
-    }
+  --red-dark:#8f1d18;
+  --red-main:#b12a24;
+  --red-light:#e06b5f;
+  --gold-soft:#f3c9a9;
 
-    .inner{
-      padding:34px 26px 24px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:20px;
-    }
-    @media (max-width:860px){ .inner{grid-template-columns:1fr} }
+  --line:rgba(177,42,36,.22);
+  --shadow:0 18px 70px rgba(143,29,24,.18);
+  --radius:26px;
+}
+*{box-sizing:border-box}
 
-    .left{
-      border-radius:22px;
-      border:1px solid rgba(45,106,79,.16);
-      padding:22px;
-      background:
-        radial-gradient(700px 320px at 20% 0%, rgba(183,228,199,.35), transparent 60%),
-        radial-gradient(700px 320px at 80% 0%, rgba(255,214,165,.30), transparent 60%),
-        #fff;
-    }
-    .headline{
-      font-family: "Noto Serif SC", serif;
-      font-weight:700;
-      font-size:30px;
-      margin:0 0 8px;
-      color:var(--green);
-      letter-spacing:.06em;
-    }
-    .sub{
-      margin:0 0 18px;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:14px;
-    }
-    .names{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:baseline;
-      margin:10px 0 14px;
-    }
-    .names .cn{
-      font-family:"Noto Serif SC", serif;
-      font-size:22px;
-      font-weight:700;
-      letter-spacing:.05em;
-    }
-    .names .en{
-      font-size:14px;
-      font-weight:800;
-      color:rgba(23,32,24,.70);
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(45,106,79,.30), rgba(183,228,199,.55), rgba(45,106,79,.30), transparent);
-      margin:14px 0 18px;
-    }
-    .info{
-      display:grid;
-      gap:10px;
-      font-size:14px;
-      line-height:1.6;
-    }
-    .kv{
-      display:grid;
-      grid-template-columns: 110px 1fr;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:16px;
-      border:1px solid rgba(45,106,79,.14);
-      background: rgba(183,228,199,.12);
-    }
-    .k{
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color: rgba(45,106,79,.85);
-      font-size:12px;
-    }
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+  background:
+    radial-gradient(900px 450px at 15% 5%, rgba(224,107,95,.35), transparent 60%),
+    radial-gradient(900px 450px at 85% 0%, rgba(243,201,169,.45), transparent 65%),
+    linear-gradient(180deg,var(--bg),#fff);
+  font-family:"Quicksand","Noto Serif SC",sans-serif;
+  color:var(--ink);
+}
 
-    .right{
-      border-radius:22px;
-      border:1px solid rgba(45,106,79,.16);
-      padding:18px;
-      background: rgba(183,228,199,.10);
-    }
-    .right h3{
-      margin:4px 0 10px;
-      font-size:14px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color: rgba(45,106,79,.95);
-    }
+.wrap{width:min(980px,100%)}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
 
-    /* Buttons */
-    .btns{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin:10px 0 12px;
-    }
-    @media (max-width:520px){ .btns{grid-template-columns:1fr} }
+/* Ribbon */
+.ribbon{
+  position:absolute;
+  left:-60px;
+  top:22px;
+  transform:rotate(-10deg);
+  background:linear-gradient(90deg,var(--red-dark),var(--red-main),var(--red-light));
+  color:#fff;
+  padding:10px 90px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:12px;
+  border-radius:999px;
+}
 
-    a.btn{
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 12px;
-      border-radius:16px;
-      font-weight:900;
-      letter-spacing:.02em;
-      border:1px solid rgba(45,106,79,.22);
-      background:#fff;
-      color: var(--green);
-      box-shadow: 0 12px 26px rgba(45,106,79,.10);
-      cursor:pointer;
-      user-select:none;
-    }
-    a.btn.primary{
-      background: linear-gradient(90deg, rgba(45,106,79,.95), rgba(183,228,199,.95));
-      color:#fff;
-      border-color: rgba(255,255,255,.22);
-    }
+.inner{
+  padding:34px 26px 24px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:20px;
+}
+@media(max-width:860px){.inner{grid-template-columns:1fr}}
 
-    /* QR */
-    .qr{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width:420px){ .qr{grid-template-columns:1fr} }
-    .qrbox{
-      border-radius:18px;
-      border:1px dashed rgba(45,106,79,.28);
-      padding:12px;
-      text-align:center;
-      background: rgba(255,255,255,.60);
-    }
-    .cap{
-      margin-top:8px;
-      font-size:12px;
-      color:rgba(23,32,24,.72);
-      font-weight:800;
-      letter-spacing:.08em;
-    }
+.left{
+  border-radius:22px;
+  border:1px solid var(--line);
+  padding:22px;
+  background:
+    radial-gradient(700px 320px at 20% 0%, rgba(224,107,95,.22), transparent 60%),
+    radial-gradient(700px 320px at 80% 0%, rgba(243,201,169,.25), transparent 60%),
+    #fff;
+}
 
-    .bottom{
-      padding:14px 26px 22px;
-      border-top:1px solid rgba(45,106,79,.12);
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      font-size:12px;
-      color: rgba(23,32,24,.62);
-    }
+.headline{
+  font-family:"Noto Serif SC",serif;
+  font-size:30px;
+  font-weight:700;
+  color:var(--red-main);
+  margin:0 0 8px;
+}
+.sub{font-size:14px;color:var(--muted);line-height:1.65}
 
-    /* Print */
-    @media print{
-      body{background:#fff; padding:0}
-      .card{box-shadow:none; border:1px solid #ddd}
-      .right{background:#fff}
-      .btns{display:none !important}
-      .ribbon{background:#fff; color:#000; box-shadow:none; border:1px solid #ddd; transform:none; left:0; top:0; padding:8px 16px;}
-    }
+.names{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.names .cn{font-family:"Noto Serif SC";font-size:22px;font-weight:700}
+.names .en{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-    /* =========================
-       Mobile Optimization (built-in)
-       ========================= */
-    @media (max-width: 480px){
-      body{ padding:10px; }
+.divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--red-light),var(--gold-soft),var(--red-light),transparent);
+  margin:14px 0 18px;
+}
 
-      .ribbon{
-        position:relative;
-        left:0;
-        top:0;
-        transform:none;
-        padding:8px 16px;
-        border-radius:0 0 16px 16px;
-        font-size:11px;
-        text-align:center;
-        margin-bottom:6px;
-        box-shadow: 0 12px 22px rgba(45,106,79,.18);
-      }
+.info{display:grid;gap:10px;font-size:14px}
+.kv{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:16px;
+  background:linear-gradient(180deg,rgba(224,107,95,.14),rgba(243,201,169,.18));
+  border:1px solid var(--line);
+}
+.k{font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-dark)}
 
-      .inner{
-        padding:18px 14px 16px;
-        gap:14px;
-      }
+.right{
+  border-radius:22px;
+  border:1px solid var(--line);
+  padding:18px;
+  background:rgba(243,201,169,.25);
+}
+.right h3{
+  margin:4px 0 10px;
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--red-dark);
+}
 
-      .left, .right{
-        padding:16px;
-        border-radius:18px;
-      }
+/* Buttons */
+.btns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:10px 0 12px;
+}
+@media(max-width:520px){.btns{grid-template-columns:1fr}}
 
-      .headline{
-        font-size:24px;
-        text-align:center;
-      }
+a.btn{
+  text-decoration:none;
+  padding:12px;
+  border-radius:16px;
+  font-weight:900;
+  text-align:center;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--red-main);
+}
+a.btn.primary{
+  background:linear-gradient(90deg,var(--red-dark),var(--red-main),var(--red-light));
+  color:#fff;
+}
 
-      .names{
-        justify-content:center;
-        text-align:center;
-      }
+/* QR */
+.qr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:420px){.qr{grid-template-columns:1fr}}
+.qrbox{
+  border:1px dashed var(--line);
+  border-radius:18px;
+  padding:12px;
+  background:#fff;
+  text-align:center;
+}
+#qrWa,#qrMap{display:flex;justify-content:center}
+#qrWa img,#qrMap img,#qrWa table,#qrMap table{margin:auto!important}
+.cap{font-size:12px;font-weight:800;color:var(--muted);margin-top:8px}
 
-      .names .cn{font-size:20px;}
-      .names .en{font-size:12px;}
+.bottom{
+  padding:14px 26px 22px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:var(--muted);
+}
 
-      .btns{ grid-template-columns:1fr; gap:10px; }
-      a.btn{ padding:14px; font-size:14px; }
-
-      .qr{ grid-template-columns:1fr; }
-      .qrbox{ padding:10px; }
-
-      .bottom{
-        flex-direction:column;
-        text-align:center;
-        gap:6px;
-      }
-    }
-
-    /* Small helper (optional hide on desktop/mobile) */
-    .only-mobile{display:none}
-    @media (max-width:480px){ .only-mobile{display:block} .only-desktop{display:none} }
-  </style>
+/* Mobile */
+@media(max-width:480px){
+  body{padding:10px}
+  .ribbon{position:relative;left:0;top:0;transform:none;padding:8px 16px;border-radius:0 0 16px 16px}
+  .inner{padding:18px 14px;gap:14px}
+  .headline{text-align:center;font-size:24px}
+  .names{justify-content:center;text-align:center}
+  .btns{grid-template-columns:1fr}
+  .qr{grid-template-columns:1fr}
+  .bottom{flex-direction:column;text-align:center;gap:6px}
+}
+@media print{.btns{display:none}}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="ribbon">Invitation · 请柬</div>
+<div class="wrap">
+<div class="card">
+<div class="ribbon">Invitation · 请柬</div>
 
-      <div class="inner">
-        <section class="left">
-          <h1 class="headline">结婚午宴请柬</h1>
-          <p class="sub">
-            我们诚挚邀请您出席我们的结婚午宴，与我们一同分享幸福时刻。<br/>
-            You are warmly invited to celebrate our wedding lunch with us.
-          </p>
+<div class="inner">
+<section class="left">
+<h1 class="headline">结婚午宴请柬</h1>
+<p class="sub">我们诚挚邀请您出席我们的结婚午宴，与我们一同分享幸福时刻。<br>
+You are warmly invited to celebrate our wedding lunch with us.</p>
 
-          <div class="names">
-            <div class="cn">蔡崇申 · 朱燕虹</div>
-            <div class="en">Johnshen Chuah & Jacquelyn Choo</div>
-          </div>
+<div class="names">
+<div class="cn">蔡崇申 · 朱燕虹</div>
+<div class="en">Johnshen Chuah & Jacquelyn Choo</div>
+</div>
 
-          <div class="divider"></div>
+<div class="divider"></div>
 
-          <div class="info">
-            <div class="kv">
-              <div class="k">Date 日期</div>
-              <div class="v"><b>2026-09-27（星期日 Sunday）</b></div>
-            </div>
-            <div class="kv">
-              <div class="k">Time 时间</div>
-              <div class="v"><b>11:30am – 2:00pm</b></div>
-            </div>
-            <div class="kv">
-              <div class="k">Venue 地点</div>
-              <div class="v">
-                <b>金阳迎宾楼 Golden Sun Restaurant</b><br/>
-                2nd Floor, Lot 35604, Jalan Kuchai Lama, 58200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia
-              </div>
-            </div>
-          </div>
+<div class="info">
+<div class="kv"><div class="k">Date</div><div><b>2026-09-27（Sunday）</b></div></div>
+<div class="kv"><div class="k">Time</div><div><b>11:30am – 2:00pm</b></div></div>
+<div class="kv"><div class="k">Venue</div><div>
+<b>金阳迎宾楼 Golden Sun Restaurant</b><br>
+2nd Floor, Lot 35604, Jalan Kuchai Lama, Kuala Lumpur
+</div></div>
+</div>
+</section>
 
-          <p class="only-desktop" style="margin:14px 2px 0; font-size:12px; color:rgba(23,32,24,.65); line-height:1.55;">
-            温馨提示：请提前回复出席人数与忌口，以便我们安排座位。<br/>
-            Kindly RSVP in advance for seat arrangement.
-          </p>
-        </section>
+<aside class="right">
+<h3>Map & RSVP</h3>
 
-        <aside class="right">
-          <h3>Map & RSVP · 导航与回复</h3>
+<div class="btns">
+<a class="btn primary" id="waBtn">💬 WhatsApp RSVP</a>
+<a class="btn" id="mapBtn">📍 Google Map</a>
+<a class="btn" id="icsBtn">📅 Add to Calendar</a>
+<a class="btn" id="formBtn">✅ RSVP Form</a>
+</div>
 
-          <!-- Buttons: WA first (best CTA), then Map, Calendar, Form -->
-          <div class="btns">
-            <a class="btn primary" id="waBtn" target="_blank" rel="noopener">💬 WhatsApp RSVP</a>
-            <a class="btn" id="mapBtn" target="_blank" rel="noopener">📍 Google Map</a>
-            <a class="btn" id="icsBtn" href="javascript:void(0)">📅 Add to Calendar</a>
-            <a class="btn" id="formBtn" target="_blank" rel="noopener">✅ RSVP Form</a>
-          </div>
+<div class="qr">
+<div class="qrbox"><div id="qrWa"></div><div class="cap">WhatsApp RSVP</div></div>
+<div class="qrbox"><div id="qrMap"></div><div class="cap">Google Map</div></div>
+</div>
+</aside>
+</div>
 
-          <div class="qr">
-            <div class="qrbox">
-              <div id="qrWa"></div>
-              <div class="cap">扫码 WhatsApp RSVP</div>
-            </div>
-            <div class="qrbox">
-              <div id="qrMap"></div>
-              <div class="cap">扫码导航 · Scan Map</div>
-            </div>
-          </div>
+<div class="bottom">
+<div>Johnshen Chuah & Jacquelyn Choo · 蔡崇申 & 朱燕虹</div>
+<div>Dress Code：Smart Casual</div>
+</div>
+</div>
+</div>
 
-          <p style="margin:12px 2px 0; font-size:12px; color:rgba(23,32,24,.68); line-height:1.55;">
-            温馨提示：请提前 WhatsApp 回复出席与人数，以便我们安排座位。<br/>
-            Kindly RSVP via WhatsApp in advance for seat arrangement.
-          </p>
-        </aside>
-      </div>
+<script>
+const MAP_URL="https://www.google.com/maps?q="+encodeURIComponent(
+"Golden Sun Restaurant, 2nd Floor, Jalan Kuchai Lama, Kuala Lumpur"
+);
+const RSVP_URL="https://forms.gle/Hv3QqViMiscmcL1u9";
+const WA_NUM="601110180669";
 
-      <div class="bottom">
-        <div>Johnshen Chuah & Jacquelyn Choo · 蔡崇申 & 朱燕虹</div>
-        <div>Dress code 着装：Smart Casual</div>
-      </div>
-    </div>
-  </div>
+const WA_TEXT=`Hi Johnshen & Jacquelyn 👋
+I would like to RSVP for your wedding lunch on 27 Sep 2026.
 
-  <script>
-    /***********************
-     * CONFIG (edit if needed)
-     ***********************/
-    const MAP_URL  = "https://www.google.com/maps?q=" + encodeURIComponent(
-      "Golden Sun Restaurant, 2nd Floor, Lot 35604, Jalan Kuchai Lama, 58200 Kuala Lumpur, Malaysia"
-    );
+Name:
+Pax:
+Dietary:
 
-    // Put your real Google Form link here (optional; keep placeholder if not ready)
-    const RSVP_URL = "https://forms.gle/PUT_YOUR_RSVP_LINK_HERE";
+Thank you!`;
 
-    // WhatsApp receiver (no +, no spaces)
-    const WHATSAPP_NUMBER = "601110180669";
+const WA_URL="https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(WA_TEXT);
 
-    // RSVP message (bilingual)
-    const RSVP_MESSAGE =
-`Hi Johnshen & Jacquelyn 👋
-I would like to RSVP for your wedding lunch on 27 Sep 2026 (11:30am–2:00pm) at Golden Sun Restaurant.
+document.getElementById("waBtn").href=WA_URL;
+document.getElementById("mapBtn").href=MAP_URL;
+document.getElementById("formBtn").href=RSVP_URL;
 
-Name / 姓名:
-Attending / 出席: Yes / No
-Pax / 人数:
-Dietary / 忌口:
-Notes / 备注:
+document.getElementById("icsBtn").onclick=()=>{
+const ics=`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Wedding Lunch - Johnshen & Jacquelyn
+DTSTART:20260927T033000Z
+DTEND:20260927T060000Z
+LOCATION:Golden Sun Restaurant, Kuala Lumpur
+END:VEVENT
+END:VCALENDAR`;
+const b=new Blob([ics],{type:"text/calendar"});
+const a=document.createElement("a");
+a.href=URL.createObjectURL(b);
+a.download="Wedding_Lunch.ics";
+a.click();
+};
+</script>
 
-恭喜你们！🎉`;
-
-    const WHATSAPP_URL =
-      "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(RSVP_MESSAGE);
-
-    /***********************
-     * ICS (.ics) generator
-     ***********************/
-    const EVENT_TITLE = "Wedding Lunch - Johnshen Chuah & Jacquelyn Choo";
-    const EVENT_LOCATION = "Golden Sun Restaurant, 2nd Floor, Lot 35604, Jalan Kuchai Lama, 58200 Kuala Lumpur, Malaysia";
-    const EVENT_DESCRIPTION =
-`Wedding Lunch Invitation
-Johnshen Chuah & Jacquelyn Choo
-蔡崇申 & 朱燕虹
-
-Date: 27 Sep 2026 (Sunday)
-Time: 11:30am - 2:00pm
-Venue: Golden Sun Restaurant (金阳迎宾楼)
-
-Map: ${MAP_URL}
-RSVP (WhatsApp): ${WHATSAPP_URL}
-RSVP (Form): ${RSVP_URL}`;
-
-    // KL (UTC+8): 11:30–14:00 => UTC 03:30–06:00
-    const DTSTART_UTC = "20260927T033000Z";
-    const DTEND_UTC  = "20260927T060000Z";
-
-    function escapeICS(str){
-      return String(str)
-        .replace(/\\/g, "\\\\")
-        .replace(/,/g, "\\,")
-        .replace(/;/g, "\\;")
-        .replace(/\r?\n/g, "\\n");
-    }
-
-    function downloadICS() {
-      const uid = "johnshen-jacquelyn-weddinglunch-20260927@" + location.host;
-      const now = new Date();
-      const pad = (n)=> String(n).padStart(2,"0");
-      const dtstamp =
-        now.getUTCFullYear() +
-        pad(now.getUTCMonth()+1) +
-        pad(now.getUTCDate()) + "T" +
-        pad(now.getUTCHours()) +
-        pad(now.getUTCMinutes()) +
-        pad(now.getUTCSeconds()) + "Z";
-
-      const ics =
-        "BEGIN:VCALENDAR\r\n" +
-        "VERSION:2.0\r\n" +
-        "PRODID:-//Wedding Invitation//EN\r\n" +
-        "CALSCALE:GREGORIAN\r\n" +
-        "METHOD:PUBLISH\r\n" +
-        "BEGIN:VEVENT\r\n" +
-        "UID:" + uid + "\r\n" +
-        "DTSTAMP:" + dtstamp + "\r\n" +
-        "DTSTART:" + DTSTART_UTC + "\r\n" +
-        "DTEND:" + DTEND_UTC + "\r\n" +
-        "SUMMARY:" + escapeICS(EVENT_TITLE) + "\r\n" +
-        "LOCATION:" + escapeICS(EVENT_LOCATION) + "\r\n" +
-        "DESCRIPTION:" + escapeICS(EVENT_DESCRIPTION) + "\r\n" +
-        "END:VEVENT\r\n" +
-        "END:VCALENDAR\r\n";
-
-      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Wedding_Lunch_Johnshen_Jacquelyn_2026-09-27.ics";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-
-    /***********************
-     * Auto-detect mobile/desktop
-     * (used for QR sizing + slight UX)
-     ***********************/
-    const isMobile = window.matchMedia && window.matchMedia("(max-width: 480px)").matches;
-
-    // Bind buttons
-    document.getElementById("mapBtn").href  = MAP_URL;
-    document.getElementById("formBtn").href = RSVP_URL;
-    document.getElementById("waBtn").href   = WHATSAPP_URL;
-    document.getElementById("icsBtn").addEventListener("click", downloadICS);
-
-    // Mobile-friendly: if RSVP_URL is still placeholder, hide form button automatically
-    if (RSVP_URL.includes("PUT_YOUR_RSVP_LINK_HERE")) {
-      document.getElementById("formBtn").style.display = "none";
-    }
-  </script>
-
-  <!-- QR generator -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-  <script>
-    // Auto-size QR for mobile/desktop
-    const QR_SIZE = (window.matchMedia && window.matchMedia("(max-width: 480px)").matches) ? 120 : 150;
-
-    new QRCode(document.getElementById("qrWa"),  { text: WHATSAPP_URL, width: QR_SIZE, height: QR_SIZE, correctLevel: QRCode.CorrectLevel.M });
-    new QRCode(document.getElementById("qrMap"), { text: MAP_URL,      width: QR_SIZE, height: QR_SIZE, correctLevel: QRCode.CorrectLevel.M });
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+const QR=window.innerWidth<480?120:150;
+new QRCode(document.getElementById("qrWa"),{text:WA_URL,width:QR,height:QR});
+new QRCode(document.getElementById("qrMap"),{text:MAP_URL,width:QR,height:QR});
+</script>
 </body>
 </html>
