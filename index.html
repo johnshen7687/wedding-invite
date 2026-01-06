@@ -156,8 +156,7 @@ a.btn.primary{
 }
 
 /* QR */
-.qr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:420px){.qr{grid-template-columns:1fr}}
+.qr{display:grid;grid-template-columns:1fr;gap:12px}
 .qrbox{
   border:1px dashed var(--line);
   border-radius:18px;
@@ -165,8 +164,8 @@ a.btn.primary{
   background:#fff;
   text-align:center;
 }
-#qrWa,#qrMap{display:flex;justify-content:center}
-#qrWa img,#qrMap img,#qrWa table,#qrMap table{margin:auto!important}
+#qrMap{display:flex;justify-content:center}
+#qrMap img,#qrMap table{margin:auto!important}
 .cap{font-size:12px;font-weight:800;color:var(--muted);margin-top:8px}
 
 .bottom{
@@ -186,7 +185,6 @@ a.btn.primary{
   .headline{text-align:center;font-size:24px}
   .names{justify-content:center;text-align:center}
   .btns{grid-template-columns:1fr}
-  .qr{grid-template-columns:1fr}
   .bottom{flex-direction:column;text-align:center;gap:6px}
 }
 @media print{.btns{display:none}}
@@ -225,15 +223,15 @@ You are warmly invited to celebrate our wedding lunch with us.</p>
 <h3>Map & RSVP</h3>
 
 <div class="btns">
-<a class="btn primary" id="waBtn">💬 WhatsApp RSVP</a>
-<a class="btn" id="mapBtn">📍 Google Map</a>
+<a class="btn primary" id="formBtn">✅ RSVP Form</a>
 <a class="btn" id="icsBtn">📅 Add to Calendar</a>
-<a class="btn" id="formBtn">✅ RSVP Form</a>
 </div>
 
 <div class="qr">
-<div class="qrbox"><div id="qrWa"></div><div class="cap">WhatsApp RSVP</div></div>
-<div class="qrbox"><div id="qrMap"></div><div class="cap">Google Map</div></div>
+<div class="qrbox">
+  <div id="qrMap"></div>
+  <div class="cap">Google Map</div>
+</div>
 </div>
 </aside>
 </div>
@@ -249,22 +247,8 @@ You are warmly invited to celebrate our wedding lunch with us.</p>
 const MAP_URL="https://www.google.com/maps?q="+encodeURIComponent(
 "Golden Sun Restaurant, 2nd Floor, Jalan Kuchai Lama, Kuala Lumpur"
 );
-const RSVP_URL="https://forms.gle/Hv3QqViMiscmcL1u9";
-const WA_NUM="601110180669";
+const RSVP_URL="https://forms.gle/X8HgxjmmigWorpgi9";
 
-const WA_TEXT=`Hi Johnshen & Jacquelyn 👋
-I would like to RSVP for your wedding lunch on 27 Sep 2026.
-
-Name:
-Pax:
-Dietary:
-
-Thank you!`;
-
-const WA_URL="https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(WA_TEXT);
-
-document.getElementById("waBtn").href=WA_URL;
-document.getElementById("mapBtn").href=MAP_URL;
 document.getElementById("formBtn").href=RSVP_URL;
 
 document.getElementById("icsBtn").onclick=()=>{
@@ -287,9 +271,11 @@ a.click();
 
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
+window.onload=function(){
 const QR=window.innerWidth<480?120:150;
-new QRCode(document.getElementById("qrWa"),{text:WA_URL,width:QR,height:QR});
 new QRCode(document.getElementById("qrMap"),{text:MAP_URL,width:QR,height:QR});
+};
 </script>
+
 </body>
 </html>
