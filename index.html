@@ -92,16 +92,47 @@ body{
   font-weight:700;
   color:var(--red-main);
   margin:0 0 8px;
+  text-align:center;
 }
-.sub{font-size:14px;color:var(--muted);line-height:1.65}
 
-.names{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
-.names .cn{font-family:"Noto Serif SC";font-size:22px;font-weight:700}
-.names .en{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.65;
+  text-align:center;   /* ✅ 中英居中 */
+}
+
+.names{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:14px 0;
+  justify-content:center;
+  text-align:center;
+}
+.names .cn{
+  font-family:"Noto Serif SC";
+  font-size:22px;
+  font-weight:700;
+}
+.names .en{
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 
 .divider{
   height:1px;
-  background:linear-gradient(90deg,transparent,var(--red-light),var(--gold-soft),var(--red-light),transparent);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--red-light),
+    var(--gold-soft),
+    var(--red-light),
+    transparent
+  );
   margin:14px 0 18px;
 }
 
@@ -112,10 +143,20 @@ body{
   gap:10px;
   padding:10px 12px;
   border-radius:16px;
-  background:linear-gradient(180deg,rgba(224,107,95,.14),rgba(243,201,169,.18));
+  background:linear-gradient(
+    180deg,
+    rgba(224,107,95,.14),
+    rgba(243,201,169,.18)
+  );
   border:1px solid var(--line);
 }
-.k{font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-dark)}
+.k{
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--red-dark);
+}
 
 .right{
   border-radius:22px;
@@ -151,7 +192,12 @@ a.btn{
   color:var(--red-main);
 }
 a.btn.primary{
-  background:linear-gradient(90deg,var(--red-dark),var(--red-main),var(--red-light));
+  background:linear-gradient(
+    90deg,
+    var(--red-dark),
+    var(--red-main),
+    var(--red-light)
+  );
   color:#fff;
 }
 
@@ -164,9 +210,19 @@ a.btn.primary{
   background:#fff;
   text-align:center;
 }
-#qrMap{display:flex;justify-content:center}
-#qrMap img,#qrMap table{margin:auto!important}
-.cap{font-size:12px;font-weight:800;color:var(--muted);margin-top:8px}
+#qrMap{
+  display:flex;
+  justify-content:center;
+}
+#qrMap img,#qrMap table{
+  margin:auto!important;
+}
+.cap{
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  margin-top:8px;
+}
 
 .bottom{
   padding:14px 26px 22px;
@@ -180,12 +236,20 @@ a.btn.primary{
 /* Mobile */
 @media(max-width:480px){
   body{padding:10px}
-  .ribbon{position:relative;left:0;top:0;transform:none;padding:8px 16px;border-radius:0 0 16px 16px}
+  .ribbon{
+    position:relative;
+    left:0;top:0;
+    transform:none;
+    padding:8px 16px;
+    border-radius:0 0 16px 16px;
+  }
   .inner{padding:18px 14px;gap:14px}
-  .headline{text-align:center;font-size:24px}
-  .names{justify-content:center;text-align:center}
   .btns{grid-template-columns:1fr}
-  .bottom{flex-direction:column;text-align:center;gap:6px}
+  .bottom{
+    flex-direction:column;
+    text-align:center;
+    gap:6px;
+  }
 }
 @media print{.btns{display:none}}
 </style>
@@ -194,13 +258,17 @@ a.btn.primary{
 <body>
 <div class="wrap">
 <div class="card">
+
 <div class="ribbon">Invitation · 请柬</div>
 
 <div class="inner">
 <section class="left">
 <h1 class="headline">结婚午宴请柬</h1>
-<p class="sub">我们诚挚邀请您出席我们的结婚午宴，与我们一同分享幸福时刻。<br>
-You are warmly invited to celebrate our wedding lunch with us.</p>
+
+<p class="sub">
+我们诚挚邀请您出席我们的结婚午宴，与我们一同分享幸福时刻。<br>
+You are warmly invited to celebrate our wedding lunch with us.
+</p>
 
 <div class="names">
 <div class="cn">蔡崇申 · 朱燕虹</div>
@@ -210,12 +278,21 @@ You are warmly invited to celebrate our wedding lunch with us.</p>
 <div class="divider"></div>
 
 <div class="info">
-<div class="kv"><div class="k">Date</div><div><b>2026-09-27（Sunday）</b></div></div>
-<div class="kv"><div class="k">Time</div><div><b>11:30am – 2:00pm</b></div></div>
-<div class="kv"><div class="k">Venue</div><div>
-<b>金阳迎宾楼 Golden Sun Restaurant</b><br>
-2nd Floor, Lot 35604, Jalan Kuchai Lama, Kuala Lumpur
-</div></div>
+<div class="kv">
+  <div class="k">Date</div>
+  <div><b>2026-09-27（Sunday）</b></div>
+</div>
+<div class="kv">
+  <div class="k">Time</div>
+  <div><b>11:30am – 2:00pm</b></div>
+</div>
+<div class="kv">
+  <div class="k">Venue</div>
+  <div>
+    <b>金阳迎宾楼 Golden Sun Restaurant</b><br>
+    2nd Floor, Lot 35604, Jalan Kuchai Lama, Kuala Lumpur
+  </div>
+</div>
 </div>
 </section>
 
@@ -223,36 +300,46 @@ You are warmly invited to celebrate our wedding lunch with us.</p>
 <h3>Map & RSVP</h3>
 
 <div class="btns">
-<a class="btn primary" id="formBtn">✅ RSVP Form</a>
-<a class="btn" id="icsBtn">📅 Add to Calendar</a>
+  <a class="btn primary" id="formBtn">✅ RSVP Form</a>
+  <a class="btn" id="mapBtn">📍 Google Map</a>
+  <a class="btn" id="icsBtn">📅 Add to Calendar</a>
 </div>
 
 <div class="qr">
-<div class="qrbox">
-  <div id="qrMap"></div>
-  <div class="cap">Google Map</div>
+  <div class="qrbox">
+    <div id="qrMap"></div>
+    <div class="cap">Google Map</div>
+  </div>
 </div>
-</div>
+<p style="margin:12px 2px 0; font-size:12px; color:rgba(23,32,24,.68); line-height:1.55;">
+            温馨提示：请提前回复出席与人数，以便我们安排座位。<br/>
+            Kindly RSVP in advance for seat arrangement.
+          </p>
 </aside>
 </div>
 
 <div class="bottom">
 <div>Johnshen Chuah & Jacquelyn Choo · 蔡崇申 & 朱燕虹</div>
-<div>Dress Code：Smart Casual</div>
+<div>Dress Code 着装：Smart Casual</div>
 </div>
+
 </div>
 </div>
 
 <script>
-const MAP_URL="https://www.google.com/maps?q="+encodeURIComponent(
-"Golden Sun Restaurant, 2nd Floor, Jalan Kuchai Lama, Kuala Lumpur"
-);
-const RSVP_URL="https://forms.gle/X8HgxjmmigWorpgi9";
+const MAP_URL =
+  "https://www.google.com/maps?q=" +
+  encodeURIComponent(
+    "Golden Sun Restaurant, 2nd Floor, Jalan Kuchai Lama, Kuala Lumpur"
+  );
 
-document.getElementById("formBtn").href=RSVP_URL;
+const RSVP_URL = "https://forms.gle/PUT_YOUR_FORM_LINK";
 
-document.getElementById("icsBtn").onclick=()=>{
-const ics=`BEGIN:VCALENDAR
+document.getElementById("formBtn").href = RSVP_URL;
+document.getElementById("mapBtn").href = MAP_URL;
+
+document.getElementById("icsBtn").onclick = () => {
+  const ics = `BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
 SUMMARY:Wedding Lunch - Johnshen & Jacquelyn
@@ -261,19 +348,23 @@ DTEND:20260927T060000Z
 LOCATION:Golden Sun Restaurant, Kuala Lumpur
 END:VEVENT
 END:VCALENDAR`;
-const b=new Blob([ics],{type:"text/calendar"});
-const a=document.createElement("a");
-a.href=URL.createObjectURL(b);
-a.download="Wedding_Lunch.ics";
-a.click();
+  const blob = new Blob([ics], { type: "text/calendar" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "Wedding_Lunch.ics";
+  a.click();
 };
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
-window.onload=function(){
-const QR=window.innerWidth<480?120:150;
-new QRCode(document.getElementById("qrMap"),{text:MAP_URL,width:QR,height:QR});
+window.onload = function () {
+  const size = window.innerWidth < 480 ? 120 : 150;
+  new QRCode(document.getElementById("qrMap"), {
+    text: MAP_URL,
+    width: size,
+    height: size
+  });
 };
 </script>
 
